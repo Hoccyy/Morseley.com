@@ -5,13 +5,54 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  background-color: rgb(238, 227, 193);
+}
+.menu {
+  background-color: #000;
+  list-style-type: none;
+  display: flex;
+  text-align: center;
+}
+.menuFont {
+  font-family: var(--font-mono);
+  color: #FFF;
+  text-align: center;
+  padding: 1.13rem;
+}
+
+#languages{
+  display: flex;
+  list-style: none;
+}
+
+.textArea {
+  margin-top: 10px;
+}
+#InputBox {
+  height: 300px;
+  width: 41vw;
+  border-radius: 13px;
+  font-size: xx-large;
+  resize: none;
+}
+#InputBox:focus {
+  outline: 4px solid #000;
+}
+
+#OutputBox {
+  height: 300px;
+  width: 41vw;
+  border-radius: 13px;
+  font-size: xx-large;
+  resize: none;
 }
 
 .description {
+  padding: 1rem 2.2rem;
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
-  font-size: 0.85rem;
+  font-size: 1.85rem;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
