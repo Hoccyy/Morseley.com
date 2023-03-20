@@ -32,6 +32,7 @@ export default function Home() {
       translationMode = true;
     }
     //alert(translationMode)
+    
     if (translationMode){
       
       for (var v = 0; v < userInput.length; v++){
