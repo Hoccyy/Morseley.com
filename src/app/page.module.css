@@ -11,6 +11,7 @@
 .caseDiv {
   margin-left: 75vw;
 }
+
 #translationTextCase {
   height: 50px;
   width: 80px;
@@ -21,6 +22,7 @@
   font-size: x-large;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+
 #translationTextCase:hover {
   font-weight: bold;
 }
@@ -42,6 +44,7 @@
   margin-left: 0.5vw;
   margin-right: 0.5vw;
 }
+
 #buttonUt1 {
   height: 60px;
   width: fit-content;
@@ -54,6 +57,7 @@
   margin-left: 0.5vw;
   margin-right: 0.5vw;
 }
+
 .men {
   position: absolute;
   top: 50%;
@@ -68,6 +72,7 @@
   display: flex;
   justify-content: center;
 }
+
 .menuFont {
   font-family: var(--font-mono);
   color: #FFF;
@@ -86,6 +91,7 @@
 .textArea {
   margin-top: 10px;
 }
+
 #InputBox {
   height: 280px;
   width: 41vw;
@@ -96,9 +102,11 @@
   padding-left: 20px;
   padding-top: 20px;
 }
+
 #InputBox:focus {
   outline: 2px solid #000;
 }
+
 #OutputBox:hover {
   outline: 2px dashed #000;
   font-weight: bolder;
@@ -190,9 +198,11 @@
   #InputBox{
     width: 97vw;
   }
+
   #OutputBox{
     width: 97vw;
   }
+
   .menuFont {
     font-family: var(--font-mono);
     color: #FFF;
@@ -302,6 +312,7 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }

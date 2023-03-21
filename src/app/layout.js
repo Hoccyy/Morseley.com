@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'Morseley',
-  description: 'A Morsecode translator',
+  description: 'A morsecode translator to turn English to Morse-code and back!',
 }
 
 export default function RootLayout({ children }) {
@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
             <li className={styles.menuFont}><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator'>Contact</a></li>
           </nav>
         </div>
-          
           {children}
           <nav className={styles.menu}>
             <li className={styles.menuFont}><p>By Hoccyy</p></li>
