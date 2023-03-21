@@ -19,6 +19,7 @@
   color: #FFF;
   font-family: var(--font-mono);
   font-size: x-large;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 #translationTextCase:hover {
   font-weight: bold;
@@ -40,17 +41,40 @@
   margin-left: 0.5vw;
   margin-right: 0.5vw;
 }
+#buttonUt1 {
+  height: 60px;
+  width: fit-content;
+  font-size: 30px;
+  color: #FFF;
+  font-family: var(--font-mono);
+  background-color: #000;
+  padding: 10px;
+  border-radius: 13px;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+.men {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .menu {
   background-color: #000;
   list-style-type: none;
-  display: flex;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .menuFont {
   font-family: var(--font-mono);
   color: #FFF;
   text-align: center;
-  padding: 1.13rem;
+  padding: 0.513rem;
+  
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 #languages{
@@ -259,6 +283,20 @@
 
 /* Mobile and Tablet */
 @media (max-width: 1023px) {
+  #InputBox{
+    width: 97vw;
+  }
+  #OutputBox{
+    width: 97vw;
+  }
+  .menuFont {
+    font-family: var(--font-mono);
+    color: #FFF;
+    text-align: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .content {
     padding: 4rem;
   }
@@ -288,11 +326,16 @@
   }
 
   .description {
-    font-size: 0.8rem;
+    opacity: 0;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
   }
 
   .description a {
     padding: 1rem;
+    padding: 0;
+    margin: 0;
   }
 
   .description p,
@@ -301,6 +344,8 @@
     justify-content: center;
     position: fixed;
     width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   .description p {
@@ -317,6 +362,8 @@
     );
     background-clip: padding-box;
     backdrop-filter: blur(24px);
+    padding: 0;
+    margin: 0;
   }
 
   .description div {
@@ -331,6 +378,8 @@
       rgb(var(--background-end-rgb)) 40%
     );
     z-index: 1;
+    padding: 0;
+    margin: 0;
   }
 }
 

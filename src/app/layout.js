@@ -11,15 +11,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
         <body>
-        <div>
+        <div >
           <nav className={styles.menu}>
-            <li className={styles.menuFont}>Github</li>
-            <li className={styles.menuFont}>About</li>
-            <li className={styles.menuFont}>Contact</li>
+            <li className={styles.menuFont}><a href='https://github.com/Hoccyy' target='_blank'>Github</a></li>
+            <li className={styles.menuFont}><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator'>Contact</a></li>
           </nav>
         </div>
           
           {children}
+          <nav className={styles.menu}>
+            <li className={styles.menuFont}><p>By Hoccyy</p></li>
+          </nav>
         </body>
     </html>
   )

@@ -10,18 +10,18 @@ const text = 'Type here to start...'
 var outputHolder = "Translations here";
 var translationCase = false;
 
+
 export default function Home() {
-  function copyTranslation(outputBx, segment){
-    if (segment){
-      navigator.clipboard.writeText(outputBx.value);
+  function copyTranslation(outputBx){
+    let userAgent = navigator.userAgent.toLowerCase();
+
+    if (userAgent.includes("phone") || userAgent.includes("android") || userAgent.includes("mobile")|| userAgent.includes("iphone")){
+      document.getElementById(styles.buttonUt1).remove();
       return;
     }
     else{
-      let temp = outputBx.value;
-      outputBx.value = "Copied!";
-      setTimeout(() => {}, 5000);
-      outputBx.value = temp;
       navigator.clipboard.writeText(outputBx.value);
+      return;
     }
   }
   function downloadTranslation(outputBx){
@@ -149,7 +149,7 @@ export default function Home() {
         <textarea id={styles.OutputBox} placeHolder={outputHolder} disabled></textarea>
       </div>
       <div id={styles.utilityButtons}>
-        <button id={styles.buttonUt} onClick={() => copyTranslation(document.getElementById(styles.OutputBox), true)}>Copy</button>
+        <button id={styles.buttonUt1} onClick={() => copyTranslation(document.getElementById(styles.OutputBox))}>Copy</button>
         <button id={styles.buttonUt} onClick={() => downloadTranslation(document.getElementById(styles.OutputBox))}>Download</button>
       </div>
     </main>
