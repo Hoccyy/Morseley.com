@@ -7,6 +7,39 @@
   min-height: 100vh;
   background-color: rgb(238, 227, 193);
 }
+
+.caseDiv {
+  margin-left: 75vw;
+}
+#translationTextCase {
+  height: 50px;
+  width: 80px;
+  border-radius: 12px;
+  background-color: #000;
+  color: #FFF;
+  font-family: var(--font-mono);
+  font-size: x-large;
+}
+#translationTextCase:hover {
+  font-weight: bold;
+}
+
+#utilityButtons {
+  text-align: center;
+  margin: 3vh 0 0 0;
+}
+#buttonUt {
+  height: 60px;
+  width: fit-content;
+  font-size: 30px;
+  color: #FFF;
+  font-family: var(--font-mono);
+  background-color: #000;
+  padding: 10px;
+  border-radius: 13px;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
 .menu {
   background-color: #000;
   list-style-type: none;
@@ -29,22 +62,32 @@
   margin-top: 10px;
 }
 #InputBox {
-  height: 300px;
+  height: 280px;
   width: 41vw;
   border-radius: 13px;
   font-size: xx-large;
   resize: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 #InputBox:focus {
-  outline: 4px solid #000;
+  outline: 2px solid #000;
+}
+#OutputBox:hover {
+  outline: 2px dashed #000;
+  font-weight: bolder;
 }
 
 #OutputBox {
-  height: 300px;
+  height: 280px;
   width: 41vw;
   border-radius: 13px;
   font-size: xx-large;
   resize: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 .description {

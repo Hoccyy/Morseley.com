@@ -2,7 +2,7 @@ import './globals.css'
 import styles from './page.module.css'
 
 export const metadata = {
-  title: 'Morsel',
+  title: 'Morseley',
   description: 'A Morsecode translator',
 }
 
