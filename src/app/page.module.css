@@ -93,8 +93,11 @@
 }
 
 .spacing{
+  width: 100vw;
   margin-top: 200px;
   margin-bottom: 200px;
+  list-style-type: none;
+  justify-content: center;
 }
 
 #InputBox {
