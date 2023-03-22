@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         </div>
           {children}
           <nav className={styles.menu}>
+            <div></div>
             <div className={styles.spacing}>
               <li className={styles.menuFont}><p>Project by <a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator'>Hoccyy</a></p></li>
             </div>
