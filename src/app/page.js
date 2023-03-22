@@ -135,7 +135,7 @@ export default function Home() {
     <main className={styles.main}>
       <head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9022203058839959"
-     crossorigin="anonymous"></script>
+     crossOrigin="anonymous"></script>
       </head>
       
       <ul id={styles.languages}>
