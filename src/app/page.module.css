@@ -92,6 +92,11 @@
   margin-top: 10px;
 }
 
+.spacing{
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
 #InputBox {
   height: 280px;
   width: 41vw;
