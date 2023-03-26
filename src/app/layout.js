@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'Morseley',
-  description: 'A morsecode translator to turn English to Morse-code and back!',
+  description: 'A morsecode translator to turn English to Morse-code and back! Morseley uses international morse code and quickly gives you translations available for download.',
 }
 export default function RootLayout({ children }) {
   return (
