@@ -185,14 +185,12 @@
   .description {
     opacity: 0;
     font-size: 0;
-    padding: 0;
-    margin: 0;
+    padding: 0;  margin: 0;
   }
 
   .description a {
     padding: 1rem;
-    padding: 0;
-    margin: 0;
+    padding: 0;  margin: 0;
   }
 
   .description p,
@@ -234,8 +232,6 @@
       transparent 0%,
       rgb(var(--background-end-rgb)) 40%
     );
-    z-index: 1;
-    padding: 0;
-    margin: 0;
+    z-index: 1;     padding: 0; margin: 0;
   }
 }

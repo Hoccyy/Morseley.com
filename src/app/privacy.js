@@ -6,7 +6,6 @@ const PrivacyPolicy = () => {
       <Head>
         <title>Privacy Policy</title>
       </Head>
-
       <h1>Privacy Policy</h1>
 
       <h2>This is just a personal project made for practice and I don't intend to collect any data.</h2>

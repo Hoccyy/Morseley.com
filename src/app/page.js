@@ -2,9 +2,9 @@
 import styles from './page.module.css'
 import { Analytics } from '@vercel/analytics/react'
 
-var translationCase = false;
+let translationCase = false;
 const inputHolder = 'Type here to start...'
-const outputHolder = "Translations here!";
+const outputHolder = 'Translations here!';
 
 export default function Home() {
   <Analytics/>
@@ -13,8 +13,8 @@ export default function Home() {
     if (document.getElementById(styles.OutputBox).value == null || document.getElementById(styles.OutputBox).value == ' ' || document.getElementById(styles.OutputBox).value == ''){
       return;
     }
-    let userAgent = navigator.userAgent.toLowerCase();
-    if (userAgent.includes("phone") || userAgent.includes("android") || userAgent.includes("mobile")|| userAgent.includes("iphone")){
+    let userAgent = navigator.userAgent.toLowerCase();//Device info
+    if (userAgent.includes('phone') || userAgent.includes('android') || userAgent.includes('mobile')|| userAgent.includes('iphone')){
       document.getElementById(styles.buttonUt1).remove();
       return;
     }else{//Copies to clipboard for devices compatible with clipboard
@@ -29,12 +29,12 @@ export default function Home() {
   }
   function downloadTranslation(outputBx){
     if (outputBx.value.length === 0 || outputBx.value === null || outputBx.value === ''){ return; } //Prevents empty file downloads
-    const translationFile = new Blob([(new Date())+"\n\n--------------  Translation Below   ----------------\n\n"+outputBx.value], {type: "text/plain"});
+    const translationFile = new Blob([(new Date())+'\n\n--------------  Translation Below   ----------------\n\n'+outputBx.value], {type: 'text/plain'});
     const url_ = window.URL.createObjectURL(translationFile);
     //Anchor tag to create file for download
-    const a = document.createElement("a");
+    const a = document.createElement('a');
     a.href = url_;
-    a.download = "Morseley Translation.txt";
+    a.download = 'Morseley Translation.txt';
     a.click();
     URL.revokeObjectURL(a.href);
   }
@@ -44,21 +44,21 @@ export default function Home() {
     const Translation = document.getElementById(styles.OutputBox);
    
     if (translationCase){ //'Caps' button visual changes
-      capsbutton.style = "background-color: red;";
+      capsbutton.style = 'background-color: Red;';
       Translation.value = Translation.value.toUpperCase();
     }else{
-      capsbutton.style = "background-color: black;";
+      capsbutton.style = 'background-color: Black;';
       Translation.value = Translation.value.toLowerCase();
     }
   }
   //Main function to handle all translations as the user enters characters
   const mainTranslation = (event) => {
-    let morse_Into_English = {"----": "0", "|": " ", "/": " ", "-....-":"-", ".----": "1", "..---": "2", "...--": "3", "....-":"4", ".....":"5", "-....":"6", "--...":"7","---..": "8", "----.": "9", ".-": "a", "-...":"b", "-.-.":"c", "-..": "d", ".":"e", "..-.":"f", "--.":"g", "....":"h", "..":"i", ".---": "j", "-.-": "k", ".-..":"l", "--":"m", "-.":"n", "---":"o", ".--.":"p", "--.-":"q", ".-.":"r", "...":"s", "-": "t", "..-": "u", "...-": "v", ".--": "w", "-..-":"x", "-.--":"y", "--..":"z", ".-.-.-": ".", "--..--":",", "..--..":"?", "..--.":"!", "---...":":", ".-..-.": '"', ".----.":"\'", "-...-": "=", ".-.-" : "Æ", ".-.-." : "+"};
+    let morse_Into_English = {'----': '0', '|': ' ', '/': ' ', '-....-':'-', '.----': '1', '..---': '2', '...--': '3', '....-':'4', '.....':'5', '-....':'6', '--...':'7','---..': '8', "----.": "9", ".-": "a", "-...":"b", "-.-.":"c", "-..": "d", ".":"e", "..-.":"f", "--.":"g", "....":"h", "..":"i", ".---": "j", "-.-": "k", ".-..":"l", "--":"m", "-.":"n", "---":"o", ".--.":"p", "--.-":"q", ".-.":"r", "...":"s", "-": "t", "..-": "u", "...-": "v", ".--": "w", "-..-":"x", "-.--":"y", "--..":"z", ".-.-.-": ".", "--..--":",", "..--..":"?", "..--.":"!", "---...":":", ".-..-.": '"', ".----.":"\'", "-...-": "=", ".-.-" : "Æ", ".-.-." : "+"};
     let userInput = (event.target.value).toLowerCase();
     //Sets translation mode true(Eng to Morse) and false(Morse to Eng)
     let translationMode = false;
-    let tempTranslation = "";//Temporary storage of translations initialized
-    let morseAlphabet = {" ": "\/", "@": " .--.-. ", "-": " -....- ", "a": " .- ", "b": " -... ", "c": " -.-. ", "d": " -.. ", "e": " . ", "f": " ..-. ", "g": " --. ", "h": " .... ", "i": " .. ", "j": " .--- ", "k": " -.- ", "l": " .-.. ", "m": " -- ", "n": " -. ", "o": " --- ", "p": " .--. ", "q": " --.- ", "r": " .-. ", "s": " ... ", "t": " - ", "u": " ..- ", "v": " ...- ", "w": " .-- ", "x": " -..- ", "y": " -.-- ", "z": " --.. ", "1": " .---- ", "2": " ..--- ", "3": " ...-- ", "4": " ....- ", "5": " ..... ", "6": " -.... ", "7": " --... ", "8": " ---.. ", "9": " ----. ", "0": " ----- ", ".": " .-.-.- ", ",": " --..-- ", "?": " ..--.. ", "!": " -.-.-- ", ":": " ---... ", "\"": " .-..-. ", "\'": " .----. ", "=": " -...- ", "Æ": " .-.- ", "+": " .-.-. "};
+    let tempTranslation = '';//Temporary storage of translations initialized
+    let morseAlphabet = {' ': '\/', '@': ' .--.-. ', '-': ' -....- ', 'a': ' .- ', 'b': ' -... ', 'c': ' -.-. ', 'd': ' -.. ', 'e': ' . ', 'f': ' ..-. ', 'g': ' --. ', 'h.': ' .... ', "i": " .. ", "j": " .--- ", "k": " -.- ", "l": " .-.. ", "m": " -- ", "n": " -. ", "o": " --- ", "p": " .--. ", "q": " --.- ", "r": " .-. ", "s": " ... ", "t": " - ", "u": " ..- ", "v": " ...- ", "w": " .-- ", "x": " -..- ", "y": " -.-- ", "z": " --.. ", "1": " .---- ", "2": " ..--- ", "3": " ...-- ", "4": " ....- ", "5": " ..... ", "6": " -.... ", "7": " --... ", "8": " ---.. ", "9": " ----. ", "0": " ----- ", ".": " .-.-.- ", ",": " --..-- ", "?": " ..--.. ", "!": " -.-.-- ", ":": " ---... ", "\"": " .-..-. ", "\'": " .----. ", "=": " -...- ", "Æ": " .-.- ", "+": " .-.-. "};
     //Uses regex to check if the input is english or morsecode
     if (/^[0-9a-zA-Z]+$/.test(userInput[0])) {
       translationMode = true;//Changes mode to 'Eng. to morse'
@@ -74,22 +74,22 @@ export default function Home() {
         userInput = userInput.replace('\\', '/');
       }}
     //Checks if mode is morse to Eng. and changes it
-    for (var v=0; v<2;v++){
+    for (let v=0; v<2;v++){
       if (userInput[v] == '.' || userInput[v] == '_'){
         translationMode = false;
       }}
     //Running of the English to Morse-code mode
     if (translationMode){
-      for (var v = 0; v < userInput.length; v++){
+      for (let v = 0; v < userInput.length; v++){
         tempTranslation += morseAlphabet[userInput[v]];
       }
-      while (tempTranslation.includes("undefined")){
-        tempTranslation = tempTranslation.replace("undefined", " # ");
+      while (tempTranslation.includes('undefined')){
+        tempTranslation = tempTranslation.replace('undefined', ' # ');
       }
       //removing double spaces
-      if (tempTranslation.includes("  ")){
-        while (tempTranslation.includes("  ")){
-          tempTranslation = tempTranslation.replace("  ", " ");
+      if (tempTranslation.includes('  ')){
+        while (tempTranslation.includes('  ')){
+          tempTranslation = tempTranslation.replace('  ', ' ');
         }
       }
       //Stores the output and shows the user
@@ -99,16 +99,16 @@ export default function Home() {
     }
     //morsecode to English mode
     else{
-      if (userInput.includes("  ")){
-        while (userInput.includes("  ")){
-          userInput = userInput.replace("  ", " ");
+      if (userInput.includes('  ')){
+        while (userInput.includes('  ')){
+          userInput = userInput.replace('  ', ' ');
         }}
       //Removal of end spaces and storing the morsecode as an array
-      let morseArr = userInput.trim().split(" ");
+      let morseTranslationArray = userInput.trim().split(' ');
 
-      for (var v = 0; v < userInput.length; v++){
-        if (morse_Into_English[morseArr[v]] != undefined){
-          tempTranslation += morse_Into_English[morseArr[v]];
+      for (let v = 0; v < userInput.length; v++){
+        if (morse_Into_English[morseTranslationArray[v]] != undefined){
+          tempTranslation += morse_Into_English[morseTranslationArray[v]];
         }}
       const translationOutput = document.getElementById(styles.OutputBox);
       //Returns translation in caps or common letters (Linked to 'Caps' button)
@@ -124,7 +124,7 @@ export default function Home() {
     <main className={styles.main}>
       <Analytics/>
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9022203058839959" crossOrigin="anonymous"></script>
+        <script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9022203058839959' crossOrigin='anonymous'></script>
       </head>
       <ul id={styles.languages}>
         <li className={styles.description}>English</li>
