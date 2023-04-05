@@ -6,7 +6,7 @@ export const metadata = {
   description: 'A morsecode translator to turn English to Morse-code and back! Morseley uses international morse code and quickly gives you translations available for download.',
 }
 export default function RootLayout({ children }) {
-  return (
+  return(
     <html lang="en">
         <body>
         <div >

@@ -38,12 +38,12 @@ export default function Home() {
     a.click();
     URL.revokeObjectURL(a.href);
   }
-  function textCaseChange(){
+  function textCaseChange (){
     translationCase = !(translationCase);
     const capsbutton = document.getElementById(styles.translationTextCase);
     const Translation = document.getElementById(styles.OutputBox);
    
-    if (translationCase){ //'Caps' button visual changes
+    if (translationCase){ //'Caps Lock' button visual changes
       capsbutton.style = 'background-color: Red;';
       Translation.value = Translation.value.toUpperCase();
     }else{
@@ -52,7 +52,7 @@ export default function Home() {
     }
   }
   //Main function to handle all translations as the user enters characters
-  const mainTranslation = (event) => {
+  const mainTranslation = (event) =>{
     let morse_Into_English = {'----': '0', '|': ' ', '/': ' ', '-....-':'-', '.----': '1', '..---': '2', '...--': '3', '....-':'4', '.....':'5', '-....':'6', '--...':'7','---..': '8', "----.": "9", ".-": "a", "-...":"b", "-.-.":"c", "-..": "d", ".":"e", "..-.":"f", "--.":"g", "....":"h", "..":"i", ".---": "j", "-.-": "k", ".-..":"l", "--":"m", "-.":"n", "---":"o", ".--.":"p", "--.-":"q", ".-.":"r", "...":"s", "-": "t", "..-": "u", "...-": "v", ".--": "w", "-..-":"x", "-.--":"y", "--..":"z", ".-.-.-": ".", "--..--":",", "..--..":"?", "..--.":"!", "---...":":", ".-..-.": '"', ".----.":"\'", "-...-": "=", ".-.-" : "Æ", ".-.-." : "+"};
     let userInput = (event.target.value).toLowerCase();
     //Sets translation mode true(Eng to Morse) and false(Morse to Eng)
