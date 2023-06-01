@@ -1,6 +1,6 @@
 'use client';
-import styles from './page.module.css'
-import { Analytics } from '@vercel/analytics/react'
+import styles      from './page.module.css'
+import {Analytics} from '@vercel/analytics/react'
 
 let translationCase = false;
 const inputHolder = 'Type here to start...'
@@ -14,14 +14,15 @@ export default function Home() {
       return;
     }
     let userAgent = navigator.userAgent.toLowerCase();//Device info
-    if (userAgent.includes('phone') || userAgent.includes('android') || userAgent.includes('mobile')|| userAgent.includes('iphone')){
+    if (userAgent.includes('phone') || userAgent.includes('android') || userAgent.includes('mobile') || userAgent.includes('iphone')){
       document.getElementById(styles.buttonUt1).remove();
       return;
     }else{//Copies to clipboard for devices compatible with clipboard
       try{//Error handling for if it doesn't work for the device
         navigator.clipboard.writeText(outputBx.value);
         return;
-      }catch{//Removes the copy button in case the device has trouble handling this function to prevent issues
+      }
+      catch{//Removes the copy button in case the device has trouble handling this function to prevent issues
         document.getElementById(styles.buttonUt1).remove();
         return;
       }
@@ -139,7 +140,7 @@ export default function Home() {
 
       <div id={styles.utilityButtons}>
         <button id={styles.buttonUt1} onClick={() => copyTranslation(document.getElementById(styles.OutputBox))}>Copy</button>
-        <button id={styles.buttonUt} onClick={() => downloadTranslation(document.getElementById(styles.OutputBox))}>Download</button>
+        <button id={styles.buttonUt} onClick={()  => downloadTranslation(document.getElementById(styles.OutputBox))}>Download</button>
       </div>
     </main>
   )
