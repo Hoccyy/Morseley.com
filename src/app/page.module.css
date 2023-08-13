@@ -3,9 +3,17 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-  background-color: rgb(238, 227, 193);
+  padding: 9rem;
+  min-height: 90vh;
+  background-color: rgb(145, 135, 199);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.previewImages {
+  width: 300px;
 }
 
 .caseDiv {
@@ -27,7 +35,7 @@
   font-weight: bold;
 }
 
-#utilityButtons {
+#utilityButtonHolder {
   text-align: center;
   margin: 3vh 0 0 0;
 }
@@ -136,11 +144,12 @@
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
-  font-size: 1.85rem;
+  font-size: 3.13rem;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+  text-shadow: 2px 2px black;
 }
 
 .description a {

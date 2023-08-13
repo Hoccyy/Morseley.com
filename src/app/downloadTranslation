@@ -1,0 +1,13 @@
+export default function downloadTranslation(outputBx) {
+    if (outputBx.value.length === 0 || outputBx.value === null || outputBx.value === '') {
+        return;
+    }
+    const translationFile = new Blob([(new Date())+'\n\n-----------------  Translation Below   -----------------\n\n'+outputBx.value], {type: 'text/plain'});
+    const url_ = window.URL.createObjectURL(translationFile);
+    const a = document.createElement('a');
+    a.href = url_;
+    a.download = 'Morseley Translation.txt';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    return;
+}
