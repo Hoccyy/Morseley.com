@@ -98,6 +98,7 @@
 
 .textArea {
   margin-top: 10px;
+  width: 90%;
 }
 
 .spacing{
@@ -110,7 +111,7 @@
 
 #InputBox {
   height: 280px;
-  width: 41vw;
+  width: 50%;
   border-radius: 13px;
   font-size: xx-large;
   resize: none;
@@ -130,7 +131,7 @@
 
 #OutputBox {
   height: 280px;
-  width: 41vw;
+  width: 50%;
   border-radius: 13px;
   font-size: xx-large;
   resize: none;
