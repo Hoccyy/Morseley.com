@@ -187,8 +187,8 @@
     font-family: var(--font-mono);
     color: #FFF;
     text-align: center;
-    padding-left: 0.13rem;
-    padding-right: 0.13rem;
+    padding-left: 2.13vw;
+    padding-right: 2.13vw;
   }
 
   .content {
