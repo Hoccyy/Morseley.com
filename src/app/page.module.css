@@ -37,7 +37,7 @@
 
 #utilityButtonHolder {
   text-align: center;
-  margin: 3vh 0 0 0;
+  margin: 3vth 0 0 0;
 }
 
 #buttonUt {
@@ -172,11 +172,15 @@
 /* Mobile and Tablet */
 @media (max-width: 1023px) {
   #InputBox{
-    width: 97vw;
+    width: 100%;
   }
 
   #OutputBox{
-    width: 97vw;
+    width: 100%;
+  }
+
+  .textArea {
+    width: 90vw;
   }
 
   .menuFont {
@@ -189,6 +193,10 @@
 
   .content {
     padding: 4rem;
+  }
+
+  #utilityButtonHolder {
+    margin-top: 1.213vh;
   }
 
 
