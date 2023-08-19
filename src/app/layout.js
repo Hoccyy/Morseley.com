@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
               <li><img className={styles.previewImages} src='macOSX_Preview.png' alt='Website Preview' title='Website Preview on MacOSX Dark mode'/></li>
               <li><img className={styles.previewImages} src='morse-chart.gif' alt='Morse code alphabet with numbers and symbols' title='Morsecode alphabet with morse-code symbols and numbers'/></li>
               <div></div>
-              <li className={styles.menuFont}> <p>Project by</p><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator' title='Computer Science student and enthusiast! 🪴'>Hoccyy</a></li>
+              <li className={styles.menuFont}> <p>Project by</p><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator' title='Computer Science student and enthusiast! 🪴'>@Hoccyy</a></li>
             </div>
           </nav>
         </body>
