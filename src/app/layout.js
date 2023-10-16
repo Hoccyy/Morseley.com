@@ -9,6 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   <head>
     <meta name="google-site-verification" content="ty2Aa8sP16Yn6-Pejb6AuDwiFkoMOv4rAEirIrja4N4" />
+    <meta name="google-adsense-account" content="ca-pub-9022203058839959"></meta>
   </head>
   return(
     
