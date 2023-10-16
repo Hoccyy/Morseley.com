@@ -4,10 +4,14 @@ import styles from './page.module.css'
 export const metadata = {
   title: 'Morseley',
   description: 'A morse-code translator to translate English to Morse-code and back! Morseley uses international morse code and quickly gives you translations available for download.',
-  
 }
+
 export default function RootLayout({ children }) {
+  <head>
+    <meta name="google-site-verification" content="ty2Aa8sP16Yn6-Pejb6AuDwiFkoMOv4rAEirIrja4N4" />
+  </head>
   return(
+    
     <html lang="en">
         <body>
         <div >
