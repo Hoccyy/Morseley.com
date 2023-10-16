@@ -3,14 +3,24 @@ import styles from './page.module.css'
 import { Analytics } from '@vercel/analytics/react'
 import copyTranslation from './copyTranslation'
 import downloadTranslation from './downloadTranslation'
+import Head from 'next/head';
 
 let translationCase = false;
 const inputHolder = 'Type here to start...'
 const outputHolder = 'Translations here!';
 
+<Head>
+        <script async src="adsenseURL" crossorigin="anonymous"></script>
+    </Head>
+
+
 export default function Home() {
+  
   <Analytics/>
   function textCaseChange () {
+
+    
+    
     translationCase = !(translationCase);
     const capsbutton = document.getElementById(styles.translationTextCase);
     const Translation = document.getElementById(styles.OutputBox);
@@ -91,7 +101,12 @@ export default function Home() {
     }
   }
   return (
+    
     <main className={styles.main_}>
+      <Head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9022203058839959"
+     crossorigin="anonymous"></script>
+      </Head>
       <Analytics/>
       <ul id={styles.languages}>
         <li className={styles.description}>English</li>
