@@ -1,121 +1,141 @@
 'use client';
-import styles from './page.module.css'
-import { Analytics } from '@vercel/analytics/react'
-import copyTranslation from './copyTranslation'
-import downloadTranslation from './downloadTranslation'
+import styles from './page.module.css';
+import copyTranslation from './copyTranslation';
+import downloadTranslation from './downloadTranslation';
 import Head from 'next/head';
 
 let translationCase = false;
-const inputHolder = 'Type here to start...'
+const inputHolder = 'Type here to start...';
 const outputHolder = 'Translations here!';
 
 <Head>
-        <script async src="adsenseURL" crossorigin="anonymous"></script>
-    </Head>
-
+  <script async src="adsenseURL" crossorigin="anonymous"></script>
+</Head>
 
 export default function Home() {
-  
-  <Analytics/>
-  function textCaseChange () {
-
-    
-    
+  function textCaseChange() {
     translationCase = !(translationCase);
     const capsbutton = document.getElementById(styles.translationTextCase);
     const Translation = document.getElementById(styles.OutputBox);
    
     if (translationCase) {
       capsbutton.style = 'background-color: Red;';
+      capsbutton.innerHTML = capsbutton.innerHTML.toUpperCase();
       Translation.value = Translation.value.toUpperCase();
-    } else {
+    }
+    
+    else {
       capsbutton.style = 'background-color: Black;';
       Translation.value = Translation.value.toLowerCase();
+      capsbutton.innerHTML = 'Caps';
     }
-    return;
   }
-  // Main function to handle all translations as the user enters characters
+
+  // Main function entry point
   const mainTranslation = (event) => {
-    let morse_Into_English = {'----': '0', '|': ' ', '/': ' ', '-....-':'-', '.----': '1', '..---': '2', '...--': '3', '....-':'4', '.....':'5', '-....':'6', '--...':'7','---..': '8', "----.": "9", ".-": "a", "-...":"b", "-.-.":"c", "-..": "d", ".":"e", "..-.":"f", "--.":"g", "....":"h", "..":"i", ".---": "j", "-.-": "k", ".-..":"l", "--":"m", "-.":"n", "---":"o", ".--.":"p", "--.-":"q", ".-.":"r", "...":"s", "-": "t", "..-": "u", "...-": "v", ".--": "w", "-..-":"x", "-.--":"y", "--..":"z", ".-.-.-": ".", "--..--":",", "..--..":"?", "..--.":"!", "---...":":", ".-..-.": '"', ".----.":"\'", "-...-": "=", ".-.-" : "Æ", ".-.-." : "+"};
+    const morse_Into_English = {'----': '0', '|': ' ', '/': ' ', '-....-':'-', '.----': '1', '..---': '2', '...--': '3', '....-':'4', '.....':'5', '-....':'6', '--...':'7','---..': '8', "----.": "9", ".-": "a", "-...":"b", "-.-.":"c", "-..": "d", ".":"e", "..-.":"f", "--.":"g", "....":"h", "..":"i", ".---": "j", "-.-": "k", ".-..":"l", "--":"m", "-.":"n", "---":"o", ".--.":"p", "--.-":"q", ".-.":"r", "...":"s", "-": "t", "..-": "u", "...-": "v", ".--": "w", "-..-":"x", "-.--":"y", "--..":"z", ".-.-.-": ".", "--..--":",", "..--..":"?", "..--.":"!", "---...":":", ".-..-.": '"', ".----.":"\'", "-...-": "=", ".-.-" : "Æ", ".-.-." : "+"};
     let userInput = (event.target.value).toLowerCase();
-    // Sets translation mode true(Eng to Morse) and false(Morse to Eng)
+
+    // Sets translation mode - true (Eng to Morse) and false(Morse to Eng)
     let translationMode = false;
-    let tempTranslation = ''; //Temporary storage of translations initialized
-    let morseAlphabet = {' ': '\/', '@': ' .--.-. ', '-': ' -....- ', 'a': ' .- ', 'b': ' -... ', 'c': ' -.-. ', 'd': ' -.. ', 'e': ' . ', 'f': ' ..-. ', 'g': ' --. ', 'h': ' .... ', "i": " .. ", "j": " .--- ", "k": " -.- ", "l": " .-.. ", "m": " -- ", "n": " -. ", "o": " --- ", "p": " .--. ", "q": " --.- ", "r": " .-. ", "s": " ... ", "t": " - ", "u": " ..- ", "v": " ...- ", "w": " .-- ", "x": " -..- ", "y": " -.-- ", "z": " --.. ", "1": " .---- ", "2": " ..--- ", "3": " ...-- ", "4": " ....- ", "5": " ..... ", "6": " -.... ", "7": " --... ", "8": " ---.. ", "9": " ----. ", "0": " ----- ", ".": " .-.-.- ", ",": " --..-- ", "?": " ..--.. ", "!": " -.-.-- ", ":": " ---... ", "\"": " .-..-. ", "\'": " .----. ", "=": " -...- ", "Æ": " .-.- ", "+": " .-.-. "};
-    // Uses regex to check if the input is english or morsecode
+    let temporaryTranslation = '';
+    const morseAlphabet = {' ': '\/', '@': ' .--.-. ', '-': ' -....- ', 'a': ' .- ', 'b': ' -... ', 'c': ' -.-. ', 'd': ' -.. ', 'e': ' . ', 'f': ' ..-. ', 'g': ' --. ', 'h': ' .... ', "i": " .. ", "j": " .--- ", "k": " -.- ", "l": " .-.. ", "m": " -- ", "n": " -. ", "o": " --- ", "p": " .--. ", "q": " --.- ", "r": " .-. ", "s": " ... ", "t": " - ", "u": " ..- ", "v": " ...- ", "w": " .-- ", "x": " -..- ", "y": " -.-- ", "z": " --.. ", "1": " .---- ", "2": " ..--- ", "3": " ...-- ", "4": " ....- ", "5": " ..... ", "6": " -.... ", "7": " --... ", "8": " ---.. ", "9": " ----. ", "0": " ----- ", ".": " .-.-.- ", ",": " --..-- ", "?": " ..--.. ", "!": " -.-.-- ", ":": " ---... ", "\"": " .-..-. ", "\'": " .----. ", "=": " -...- ", "Æ": " .-.- ", "+": " .-.-. "};
+
     if (/^[0-9a-zA-Z]+$/.test(userInput[0])) {
-      translationMode = true; //Changes mode to 'Eng. to morse'
+      // Changes trasnlation mode into 'English to morsecode'
+      translationMode = true;
     }
-    if (userInput.includes('_')){
+
+    // Input cleaning and support for other symbols
+    if (userInput.includes('_')) {
       while (userInput.includes('_')){
         userInput = userInput.replace('_', '-');
-      }}
-    if (userInput.includes('\\')){
-      while (userInput.includes('\\')){
+      }
+    }
+    if (userInput.includes('\\')) {
+      while (userInput.includes('\\')) {
         userInput = userInput.replace('\\', '/');
-      }}
-    //Checks if mode is morse to Eng. and changes it
-    for (let v=0; v<2;v++){
+      }
+    }
+
+    // Checks if mode is 'morsecode to English' and changes it to 'English to morsecode'
+    for (let v=0; v<2;v++) {
       if (userInput[v] == '.' || userInput[v] == '_') {
         translationMode = false;
-      }}
-    //Running of the English to Morse-code mode
-    if (translationMode){
-      for (let v = 0; v < userInput.length; v++){
-        tempTranslation += morseAlphabet[userInput[v]];
       }
-      while (tempTranslation.includes('undefined')){
-        tempTranslation = tempTranslation.replace('undefined', ' # ');
+    }
+
+    // Mode #1 - 'English to Morsecode'
+    if (translationMode) {
+      for (let v = 0; v < userInput.length; v++) {
+        temporaryTranslation += morseAlphabet[userInput[v]];
       }
-      if (tempTranslation.includes('  ')){
-        while (tempTranslation.includes('  ')) {
-          tempTranslation = tempTranslation.replace('  ', ' ');
+      while (temporaryTranslation.includes('undefined')) {
+        temporaryTranslation = temporaryTranslation.replace('undefined', ' # ');
+      }
+      if (temporaryTranslation.includes('  ') ) {
+        while (temporaryTranslation.includes('  ')) {
+          temporaryTranslation = temporaryTranslation.replace('  ', ' ');
         }
       }
 
       const translationOutput = document.getElementById(styles.OutputBox);
-      translationOutput.value = tempTranslation;
+      translationOutput.value = temporaryTranslation;
       return;
     }
 
-    //morsecode to English mode
-    else{
-      if (userInput.includes('  ')){
+    // Mode #2 - 'Morsecode to English'
+    else {
+      if (userInput.includes('  ')) {
         while (userInput.includes('  ')) {
           userInput = userInput.replace('  ', ' ');
         }
       }
+
       let morseTranslationArray = userInput.trim().split(' ');
 
       for (let v = 0; v < userInput.length; v++) {
         if (morse_Into_English[morseTranslationArray[v]] != undefined) {
-          tempTranslation += morse_Into_English[morseTranslationArray[v]];
+          temporaryTranslation += morse_Into_English[morseTranslationArray[v]];
         }
       }
+
       const translationOutput = document.getElementById(styles.OutputBox);
+
       if (translationCase) {
-        translationOutput.value = tempTranslation.toUpperCase();
-      } else {
-        translationOutput.value = tempTranslation;
+        translationOutput.value = temporaryTranslation.toUpperCase();
+      }
+      else {
+        translationOutput.value = temporaryTranslation;
       }
     }
   }
+
   return (
-    
-    <main className={styles.main_}>
+    <main className={styles.primary}>
       <Head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9022203058839959"
-     crossorigin="anonymous"></script>
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9022203058839959"
+          crossorigin="anonymous">
+        </script>
       </Head>
-      <Analytics/>
+
       <ul id={styles.languages}>
-        <li className={styles.description}>English</li>
+        <li className={styles.description}>
+          English
+        </li>
         <li className={styles.description}></li>
-        <li className={styles.description}>MorseCode</li>
+        <li className={styles.description}>
+          MorseCode
+        </li>
       </ul>
 
+        <h1 className={styles.mobileTranslations}>MorseCode Translator</h1>
       <div className={styles.caseDiv}>
-        <button id={styles.translationTextCase} onClick={ textCaseChange } title='Caps lock for translations'>Caps</button>
+        <button id={styles.translationTextCase} onClick={ textCaseChange } title='Caps lock for translations'>
+          Caps
+        </button>
       </div>
       
       <div className={styles.textArea}>
@@ -124,8 +144,12 @@ export default function Home() {
       </div>
 
       <div id={styles.utilityButtonHolder}>
-        <button id={styles.buttonUt1} onClick={() => copyTranslation(document.getElementById(styles.OutputBox), styles)} title='Copy translation to clipboard'>Copy</button>
-        <button id={styles.buttonUt} onClick={() => downloadTranslation(document.getElementById(styles.OutputBox))} title='Download a text file of the translation'>Download</button>
+        <button id={styles.buttonUt1} onClick={() => copyTranslation(document.getElementById(styles.OutputBox), styles)} title='Copy translation to clipboard'>
+          Copy
+        </button>
+        <button id={styles.buttonUt} onClick={() => downloadTranslation(document.getElementById(styles.OutputBox))} title='Download a text file of the translation'>
+          Download
+        </button>
       </div>
     </main>
   )

@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <div >
           <nav className={styles.menu}>
             <li className={styles.menuFont}><a href='https://github.com/Hoccyy' target='_blank'>💻 GitHub</a></li>
-            <li className={styles.menuFont}><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator%20Suggestion&body=Leave Suggestions for the Morseley Translator!%0d%0a https://www.morseley.com %0d%0a______________________________________%0d%0a' title='Suggest features or fixes!'>Suggestions</a></li>
+            <li className={styles.menuFont}><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator%20Suggestion&body=Leave Suggestions for the Morseley Translator!%0d%0a https://www.morseley.com %0d%0a______________________________________%0d%0a' title='Suggest features or fixes!'>🗒️ Suggest</a></li>
             <li className={styles.menuFont}><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator' title='Send an email for concerns'>Contact ⛑️</a></li>
           </nav>
         </div>
@@ -28,7 +28,12 @@ export default function RootLayout({ children }) {
               <li><img className={styles.previewImages} src='macOSX_Preview.png' alt='Website Preview' title='Website Preview on MacOSX Dark mode'/></li>
               <li><img className={styles.previewImages} src='morse-chart.png' alt='Morse code alphabet with numbers and symbols' title='Morsecode alphabet with morse-code symbols and numbers'/></li>
               <div></div>
-              <li className={styles.menuFont}> <p>Project by</p><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator' title='Computer Science student and enthusiast! 🪴'>@Hoccyy</a></li>
+              <li className={styles.menuFont}>
+                <p>Project by</p>
+                <a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator' title='Computer Science student and enthusiast! 🪴'>
+                  @Hoccyy
+                </a>
+              </li>
             </div>
           </nav>
         </body>

@@ -1,11 +1,16 @@
 export default function copyTranslation(outputBx, styles) {
-    if (document.getElementById(styles.OutputBox).value == null || document.getElementById(styles.OutputBox).value == ' ' || document.getElementById(styles.OutputBox).value == '') {
+    let OutPutValue = document.getElementById(styles.OutputBox).value;
+
+    if (OutPutValue == null || OutPutValue == ' ' || OutPutValue == '') {
       return;
     }
-    let userAgent = navigator.userAgent.toLowerCase();//Device info
+    
+    // Device info to check if the user is on mobile or desktop
+    let userAgent = navigator.userAgent.toLowerCase();
     if (userAgent.includes('phone') || userAgent.includes('android') || userAgent.includes('mobile') || userAgent.includes('iphone')) {
       alert('Sorry, copying not fully supported for mobile devices');
-      document.getElementById(styles.buttonUt1).remove();
+
+      if (document.getElementById(styles.buttonUt1)) document.getElementById(styles.buttonUt1).remove();
       return;
     } else {
       try {

@@ -1,4 +1,4 @@
-.main_ {
+.primary {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,9 +12,8 @@
   border-top-left-radius: 50px;
 }
 
-
 .previewImages {
-  width: 300px;
+  width: 650px;
   border-radius: 13px;
 }
 
@@ -81,6 +80,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  
 }
 
 .menuFont {
@@ -118,8 +118,7 @@
   font-size: xx-large;
   resize: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  padding-left: 20px;
-  padding-top: 20px;
+  padding: 13px;
 }
 
 #InputBox:focus {
@@ -128,7 +127,6 @@
 
 #OutputBox:hover {
   outline: 2px dashed #000;
-  font-weight: bolder;
 }
 
 #OutputBox {
@@ -138,8 +136,11 @@
   font-size: xx-large;
   resize: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  padding-left: 20px;
-  padding-top: 20px;
+  padding: 13px;
+}
+
+.mobileTranslations {
+  display: none;
 }
 
 .description {
@@ -175,14 +176,43 @@
 @media (max-width: 1023px) {
   #InputBox{
     width: 100%;
+    padding: 13px;
+    text-align: left;
   }
 
   #OutputBox{
     width: 100%;
+    padding: 13px;
+    text-align: left;
+  }
+
+  #OutputBox:hover {
+    outline: 2px dashed #000;
+    font-weight: normal;
+  }
+
+  .menu {
+    padding: 6px;
+    position: fixed;
+    width: 100vw;
+    font-size: 15px;
+  }
+
+  .mobileTranslations {
+    width: 100vw;
+    display: inline;
+    text-align: center;
+    font-family: monospace;
+    padding: 19px;
+  }
+  
+  .primary {
+    margin-top: 80px;
+    padding-top: 100px;
   }
 
   .textArea {
-    width: 90vw;
+    width: 95vw;
   }
 
   .menuFont {
@@ -198,18 +228,18 @@
   }
   
   .spacing {
-    margin-top: 300px;
+    margin-top: 200px;
   }
 
   #utilityButtonHolder {
     margin-top: 1.213vh;
   }
 
-
   .description {
     opacity: 0;
     font-size: 0;
-    padding: 0;  margin: 0;
+    padding: 0;
+    margin: 0;
   }
 
   .description a {
@@ -246,7 +276,7 @@
   }
 
   .previewImages {
-    width: 75vw;
+    width: 95.13vw;
   }
 
   .description div {
