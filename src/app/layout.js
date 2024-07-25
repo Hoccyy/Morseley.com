@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
               <div></div>
               <li className={styles.menuFont}>
                 <p>Project by</p>
-                <a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator' title='Computer Science student and enthusiast! 🪴'>
+                <a href='https://github.com/Hoccyy' target='blank' title='Computer Science student and enthusiast! 🪴'>
                   @Hoccyy
                 </a>
               </li>

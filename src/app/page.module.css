@@ -10,6 +10,12 @@
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
+  width: 97.13dvw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .previewImages {
@@ -175,13 +181,13 @@
 /* Mobile and Tablet */
 @media (max-width: 1023px) {
   #InputBox{
-    width: 100%;
+    width: 95%;
     padding: 13px;
     text-align: left;
   }
 
   #OutputBox{
-    width: 100%;
+    width: 95%;
     padding: 13px;
     text-align: left;
   }
@@ -213,6 +219,10 @@
 
   .textArea {
     width: 95vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 90vw;
   }
 
   .menuFont {
