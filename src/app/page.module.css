@@ -99,6 +99,37 @@
   padding-right: 3rem;
 }
 
+.npm {
+  color: red;
+  font-weight: 900;
+}
+
+.npm:hover {
+  text-decoration: underline;
+}
+
+.npmRefBox {
+  margin: 0 0 130px 0;
+}
+
+.npmButton {
+  font-family: var(--font-mono);
+  color: #FFF;
+  font-size: 20px;
+  border-radius: 9px;
+  background-color: rgb(146, 133, 226);
+  border: .13px solid rgb(206, 206, 206);
+  text-align: center;
+  padding: 0.513rem;
+  
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.npmButton:hover {
+  animation: popShake 0.9s ease-in forwards;
+}
+
 #languages{
   display: flex;
   list-style: none;
@@ -301,5 +332,22 @@
       rgb(var(--background-end-rgb)) 40%
     );
     z-index: 1;     padding: 0; margin: 0;
+  }
+}
+
+/* anims list */
+@keyframes popShake {
+  0%{
+    transform: rotate(2.6deg);
+  }
+  50%{
+    transform: rotate(-3.9deg);
+    transform: scale(1.13);
+    background-color: orangered;
+    border: 0.5px solid black;
+  }
+  100%{
+    transform: rotate(0deg);
+    transform: scale(1);
   }
 }

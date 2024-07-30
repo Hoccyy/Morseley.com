@@ -25,6 +25,14 @@ export default function RootLayout({ children }) {
           {children}
           <nav className={styles.menu}>
             <div className={styles.spacing}>
+              <div className={styles.npmRefBox}>
+                <h1 className={styles.menuFont}>Try the morseley node package!</h1>
+                <button className={styles.npmButton}>
+                  <a href='https://www.npmjs.com/package/morseley' target='blank' className={styles.menuFont}>Get Morseley</a>
+                </button>
+                <h1 className={styles.menuFont}>Now on the&nbsp;
+                <a href='https://www.npmjs.com/package/morseley' target='blank'><span className={styles.npm}>npm registry!</span></a></h1>
+              </div>
               <li><img className={styles.previewImages} src='macOSX_Preview.png' alt='Website Preview' title='Website Preview on MacOSX Dark mode'/></li>
               <li><img className={styles.previewImages} src='morse-chart.png' alt='Morse code alphabet with numbers and symbols' title='Morsecode alphabet with morse-code symbols and numbers'/></li>
               <div></div>

@@ -10,10 +10,8 @@
   },
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
-    "latest": "^0.2.0",
     "morseley": "^1.0.2",
-    "next": "^13.2.4",
-    "postcss": "^8.4.31",
+    "next": "^14.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
