@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <div >
           <nav className={styles.menu}>
             <li className={styles.menuFont}><a href='https://github.com/Hoccyy' target='_blank'>💻 GitHub</a></li>
-            <li className={styles.menuFont}><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator%20Suggestion&body=Leave Suggestions for the Morseley Translator!%0d%0a https://www.morseley.com %0d%0a______________________________________%0d%0a' title='Suggest features or fixes!'>🗒️ Suggest</a></li>
+            <li className={styles.menuFont}><a href='https://www.npmjs.com/package/morseley' target='blank' title='Try the morseley node package'>Node Package</a></li>
             <li className={styles.menuFont}><a href='mailto:hoccyy13@gmail.com?subject=Morseley%20Translator' title='Send an email for concerns'>Contact ⛑️</a></li>
           </nav>
         </div>
