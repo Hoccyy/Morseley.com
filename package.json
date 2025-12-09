@@ -6,13 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@vercel/analytics": "^0.1.11",
     "morseley": "^1.0.2",
-    "next": "^14.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "16.0.8",
+    "react": "19.2.1",
+    "react-dom": "19.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "16.0.8"
   }
 }
